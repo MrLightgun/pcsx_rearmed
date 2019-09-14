@@ -668,11 +668,11 @@ void _PADstartPoll(PadDataS *pad) {
 	    stdpar[6] = 0x20 + (yres * absY >> 10);
 	    stdpar[7] = (0x20 + (yres * absY >> 10)) >> 8;
 		    
-	    //Offscreen - Required to combine with a trigger in certain games for offscreen reload
+	    //Offscreen - Point at the side of the screen so PSX thinks you are pointing offscreen
+	    //Required as a mouse can't be offscreen
 	    //Coordinates X=0001h, Y=000Ah indicates "no light"
 	    //This will mean you cannot shoot the very each of the screen
-	    //For some games that have inbuilt offscreen reload you may want to disable
-            //ToDo read offscreen range from settings
+            //ToDo read offscreen range from settings if useful to change
 	    int OffscreenRange = 2;
 	    if (absX < (OffscreenRange) || absX > (1023 - OffscreenRange) || absY < (OffscreenRange) || absY > (1023 - OffscreenRange))
 	    {
