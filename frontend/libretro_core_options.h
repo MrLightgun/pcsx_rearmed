@@ -335,7 +335,7 @@ struct retro_core_option_definition option_defs_us[] = {
          { "25", NULL },
          { NULL, NULL },
       },
-      "0",
+      "00",
    },
    {
       "pcsx_rearmed_gunconadjusty",
@@ -395,7 +395,7 @@ struct retro_core_option_definition option_defs_us[] = {
          { "25", NULL },
          { NULL, NULL },
       },
-      "0",
+      "00",
    },
    {
       "pcsx_rearmed_gunconadjustratiox",
