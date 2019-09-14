@@ -64,6 +64,9 @@ static long PADreadPort1(PadDataS *pad) {
         pad->leftJoyY = in_analog_left[pad_index][1];
         pad->rightJoyX = in_analog_right[pad_index][0];
         pad->rightJoyY = in_analog_right[pad_index][1];
+	    
+	pad->absoluteX = in_analog_left[pad_index][0];
+        pad->absoluteY = in_analog_left[pad_index][1];
     }
     return 0;
 }
@@ -84,6 +87,9 @@ static long PADreadPort2(PadDataS *pad) {
         pad->leftJoyY = in_analog_left[pad_index][1];
         pad->rightJoyX = in_analog_right[pad_index][0];
         pad->rightJoyY = in_analog_right[pad_index][1];
+	    
+	pad->absoluteX = in_analog_left[pad_index][0];
+        pad->absoluteY = in_analog_left[pad_index][1];
     }
     return 0;
 }
