@@ -1967,8 +1967,8 @@ void retro_run(void)
 			//Mouse range is -32767 -> 32767
 			//0.5% is about 164
 			//Use the left analog stick field to store the absolute coordinates 
-			in_analog_left[0][0] = gunx + (GunconAdjustX * 164);
-			in_analog_left[0][1] = guny + (GunconAdjustY * 164);
+			in_analog_left[0][0] = gunx + (GunconAdjustX * 1000);
+			in_analog_left[0][1] = guny + (GunconAdjustY * 1000);
 			
 			
 		}
