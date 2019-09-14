@@ -1968,8 +1968,7 @@ void retro_run(void)
 			//0.5% is about 164
 			//Use the left analog stick field to store the absolute coordinates 
 			in_analog_left[0][0] = gunx + (GunconAdjustX * 164);
-			in_analog_left[0][1] = guny;
-			//in_analog_left[0][1] = guny + (GunconAdjustY * 164);
+			in_analog_left[0][1] = guny + (GunconAdjustY * 164);
 			
 			
 		}
