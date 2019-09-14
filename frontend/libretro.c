@@ -1947,17 +1947,22 @@ void retro_run(void)
 			int gunx = input_state_cb(1, RETRO_DEVICE_POINTER, 0, RETRO_DEVICE_ID_POINTER_X);
 			int guny = input_state_cb(1, RETRO_DEVICE_POINTER, 0, RETRO_DEVICE_ID_POINTER_Y);
 			
+			int GunconAdjustX = 0;
+			int GunconAdjustY = 0;
 			struct retro_variable var;
    			var.value = NULL;
    			var.key = "pcsx_rearmed_gunconadjustx";
    			if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) || var.value)
-      			//struct retro_variable varY;
-   			//varY.value = NULL;
-   			//varY.key = "pcsx_rearmed_gunconadjusty";
-   			//if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &varY) || varY.value)
-			
-			int GunconAdjustX = atoi(var.value);
-			//int GunconAdjustY = atoi(varY.value);
+			{
+				GunconAdjustX = atoi(var.value);	
+			}
+      			
+   			var.value = NULL;
+   			var.key = "pcsx_rearmed_gunconadjusty";
+   			if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) || var.value)
+			{
+				GunconAdjustY = atoi(var.value);	
+			} 
 			
 			//Mouse range is -32767 -> 32767
 			//0.5% is about 164
