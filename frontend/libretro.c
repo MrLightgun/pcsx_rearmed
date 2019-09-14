@@ -1949,6 +1949,9 @@ void retro_run(void)
 			
 			int GunconAdjustX = 0;
 			int GunconAdjustY = 0;
+			float GunconAdjustRatioX = 1;
+			float GunconAdjustRatioY = 1;
+				
 			struct retro_variable var;
    			var.value = NULL;
    			var.key = "pcsx_rearmed_gunconadjustx";
@@ -1964,11 +1967,31 @@ void retro_run(void)
 				GunconAdjustY = atoi(var.value);	
 			} 
 			
+			
+   			var.value = NULL;
+   			var.key = "pcsx_rearmed_gunconadjustratiox";
+   			if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) || var.value)
+			{
+				GunconAdjustRatioX = atof(var.value);	
+			} 
+			
+			
+   			var.value = NULL;
+   			var.key = "pcsx_rearmed_gunconadjustratioy";
+   			if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) || var.value)
+			{
+				GunconAdjustRatioY = atof(var.value);	
+			} 
+			
 			//Mouse range is -32767 -> 32767
-			//0.5% is about 164
-			//Use the left analog stick field to store the absolute coordinates 
-			in_analog_left[0][0] = gunx + (GunconAdjustX * 1000);
-			in_analog_left[0][1] = guny + (GunconAdjustY * 1000);
+			//1% is about 655
+			//Use the left analog stick field to store the absolute coordinates
+			gunx = gunx + 32767;
+			guny = guny + 32767;
+			in_analog_left[0][0] = (gunx*GunconAdjustRatioX) + (GunconAdjustX * 655);
+			in_analog_left[0][1] = (guny*GunconAdjustRatioY) + (GunconAdjustY * 655);
+			gunx = gunx - 32767;
+			guny = guny - 32767;
 			
 			
 		}
