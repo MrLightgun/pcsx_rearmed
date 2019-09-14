@@ -282,6 +282,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "Guncon Adjust X",
       "When using Guncon mode, you can override aim in emulator if shots misaligned, this applies an increment on the x axis.",
       {
+         { "0", NULL },
          { "-25", NULL },
          { "-24", NULL },
          { "-23", NULL },
@@ -335,13 +336,14 @@ struct retro_core_option_definition option_defs_us[] = {
          { "25", NULL },
          { NULL, NULL },
       },
-      "00",
+      "0",
    },
    {
       "pcsx_rearmed_gunconadjusty",
       "Guncon Adjust Y",
       "When using Guncon mode, you can override aim in emulator if shots misaligned, this applies an increment on the y axis.",
       {
+         { "0", NULL },
          { "-25", NULL },
          { "-24", NULL },
          { "-23", NULL },
@@ -395,13 +397,14 @@ struct retro_core_option_definition option_defs_us[] = {
          { "25", NULL },
          { NULL, NULL },
       },
-      "00",
+      "0",
    },
    {
       "pcsx_rearmed_gunconadjustratiox",
       "Guncon Adjust Ratio X",
       "When using Guncon mode, you can override aim in emulator if shots misaligned, this applies a ratio on the x axis.",
       {
+         { "1", NULL },
          { "0.75", NULL },
          { "0.76", NULL },
          { "0.77", NULL },
@@ -455,13 +458,14 @@ struct retro_core_option_definition option_defs_us[] = {
          { "1.25", NULL },
          { NULL, NULL },
       },
-      "1.00",
+      "1",
    },
    {
       "pcsx_rearmed_gunconadjustratioy",
       "Guncon Adjust Ratio Y",
       "When using Guncon mode, you can override aim in emulator if shots misaligned, this applies a ratio on the y axis.",
       {
+         { "1", NULL },
          { "0.75", NULL },
          { "0.76", NULL },
          { "0.77", NULL },
@@ -515,7 +519,7 @@ struct retro_core_option_definition option_defs_us[] = {
          { "1.25", NULL },
          { NULL, NULL },
       },
-      "1.00",
+      "1",
    },
    {
       "pcsx_rearmed_dithering",
