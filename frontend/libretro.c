@@ -1929,7 +1929,10 @@ void retro_run(void)
 			// Trigger
 			//input_state_cb(i, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_O)
 			//The 1 is hardcoded instead of i to prevent the overlay mouse button libretro crash bug
-			if (input_state_cb(1, RETRO_DEVICE_MOUSE, 0, RETRO_DEVICE_ID_MOUSE_LEFT)){
+			
+			//if (input_state_cb(1, RETRO_DEVICE_MOUSE, 0, RETRO_DEVICE_ID_MOUSE_LEFT)){
+			if (input_state_cb(1, RETRO_DEVICE_LIGHTGUN, 0, RETRO_DEVICE_ID_LIGHTGUN_TRIGGER)){
+
 				in_keystate[i] |= (1 << DKEY_CIRCLE);
 			}
 			
@@ -1944,7 +1947,8 @@ void retro_run(void)
 			}
 			
 			//The 1 is hardcoded instead of i to prevent the overlay mouse button libretro crash bug
-			int gunx = input_state_cb(1, RETRO_DEVICE_POINTER, 0, RETRO_DEVICE_ID_POINTER_X);
+			int gunx = input_state_cb(1, RETRO_DEVICE_LIGHTGUN, 0, RETRO_DEVICE_ID_LIGHTGUN_SCREEN_X);
+			//int gunx = input_state_cb(1, RETRO_DEVICE_POINTER, 0, RETRO_DEVICE_ID_POINTER_X);	
 			int guny = input_state_cb(1, RETRO_DEVICE_POINTER, 0, RETRO_DEVICE_ID_POINTER_Y);
 			
 			int GunconAdjustX = 0;
